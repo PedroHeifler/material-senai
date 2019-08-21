@@ -1,0 +1,32 @@
+<br>
+<form #Form="ngForm" (ngSubmit)="onSubmit(Form)" class="form-horizontal">
+    <div class="form-goup">
+        <div class="col-sm-12">
+            <label class="control-label" for="nome">Nome</label>
+        </div>
+        <div class="col-sm-12">
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" required #nome="ngModel" [(ngModel)]="cursos.nome">
+        </div>
+    </div>
+
+    <div class="form-goup">
+        <div class="col-sm-12">
+            <label class="control-label" for="descricao">Descrição</label>
+        </div>
+        <div class="col-sm-12">
+            <input class="form-control" type="text" name="descricao" id="descricao" placeholder="Descrição" required #descricao="ngModel" [(ngModel)]="cursos.descricao">
+        </div>
+    </div>
+    <div class="form-goup">
+        <div class="col-sm-12">
+            <label class="control-label" for="email">E-mail contato</label>
+        </div>
+        <div class="col-sm-12">
+            <input class="form-control" type="email" email name="email" id="email" placeholder="e-mail contato" required #email="ngModel" [(ngModel)]="cursos.email">
+        </div>
+    </div>
+
+    <div class="col-sm-12 mt-3">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
