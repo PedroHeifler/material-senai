@@ -8,37 +8,21 @@ import { NgForm } from '@angular/forms';
 })
 export class CursoComponent implements OnInit {
 
-    cursoAtual: string = " ";
+  cursoAtual: string = " ";
 
-    cursos: any = {
-      nome: null,
-      descricao: null,
-      email: null
-    }
+  cursos: any = [{
+    nome: null,
+    descricao: null,
+    email: null
+  }]
 
   constructor() { }
 
   ngOnInit() {
   }
-  CursoAlternado(valor:string){
-    if (valor == 'Desenvolvimento'){
-      return this.cursoAtual = valor;
-    }
-    if (valor == 'redes') {
-      return this.cursoAtual = valor;
-    }
-    return this.cursoAtual = " ";
-   }
 
-   onSubmit(dados: NgForm) {
-    console.log(dados);
-    console.log("----Valores do Form----");
-    console.log(dados.form.value);
-
-    console.log("Valor do Objeto");
+  onSubmit(dados: NgForm) {
+    this.cursos.push({ nome: this.cursos.nome, descricao: this.cursos.descricao, email: this.cursos.email })
     console.log(this.cursos);
-    
-    
-    
-   }
+  }
 }

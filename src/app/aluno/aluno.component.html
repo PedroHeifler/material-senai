@@ -1,5 +1,37 @@
-<h1>Lista de alunos {{curso}} </h1>
+<br>
+<form #Form="ngForm" (ngSubmit)="onSubmitAluno(Form)" class="form-horizontal">
+    <div class="form-goup">
+        <div class="col-sm-12">
+            <label class="control-label" for="nome">Nome</label>
+        </div>
+        <div class="col-sm-12">
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" required #nome="ngModel" [(ngModel)]="alunos.nome">
+        </div>
+    </div>
+
+    <div class="form-goup">
+        <div class="col-sm-12">
+            <label class="control-label" for="descricao">CPF</label>
+        </div>
+        <div class="col-sm-12">
+            <input class="form-control" type="text" name="cpf" id="cpf" placeholder="CPF" required #curso="ngModel" [(ngModel)]="alunos.cpf">
+        </div>
+    </div>
+    <div class="form-goup">
+        <div class="col-sm-12">
+            <label class="control-label" for="email">Curso</label>
+        </div>
+        <div class="col-sm-12">
+            <input class="form-control" type="text" name="cursoAluno" id="cursoAluno" placeholder="Curso do aluno" required #curso="ngModel" [(ngModel)]="alunos.cursoAluno">
+        </div>
+    </div>
+
+    <div class="col-sm-12 mt-3">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
+
 
 <ul>
-  <li *ngFor="let alunoAtual of getAlunos()">{{alunoAtual}}</li>
+    <li [ngIf]="null" *ngFor="let aluno of alunos">{{ aluno.nome }} - {{ aluno.cpf }} - {{ aluno.cursoAluno }}</li>
 </ul>
