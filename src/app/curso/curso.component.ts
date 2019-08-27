@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { ListasService } from '../listas.service';
+
 
 @Component({
   selector: 'app-curso',
@@ -8,21 +9,14 @@ import { NgForm } from '@angular/forms';
 })
 export class CursoComponent implements OnInit {
 
-  cursoAtual: string = " ";
+  cursos: any[] = [];
+  listasService: ListasService
 
-  cursos: any = [{
-    nome: null,
-    descricao: null,
-    email: null
-  }]
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
+    this.listasService = new ListasService();
   }
 
-  onSubmit(dados: NgForm) {
-    this.cursos.push({ nome: this.cursos.nome, descricao: this.cursos.descricao, email: this.cursos.email })
-    console.log(this.cursos);
+  ngOnInit() {
+    this.cursos = this.listasService.getCursos();
   }
 }
