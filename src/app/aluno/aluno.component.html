@@ -33,5 +33,10 @@
 
 
 <ul>
-    <li *ngFor="let aluno of alunos">{{ aluno.nome }} - {{ aluno.cpf }} - {{ aluno.cursoAluno }}</li>
+    <li *ngFor="let aluno of alunos">
+        <label>Nome: &nbsp;</label>{{ aluno.nome }}<br>
+        <label>CPF: &nbsp;</label>{{ aluno.cpf }} <br>
+        <label>Curso: &nbsp;</label>{{ aluno.cursoAluno }}
+    </li>
 </ul>
+<br>

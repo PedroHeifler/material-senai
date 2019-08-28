@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ListasService } from '../listas.service';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AlunoServiceService } from './aluno.service';
 
 @Component({
   selector: 'app-aluno',
@@ -8,9 +9,15 @@ import { ListasService } from '../listas.service';
 })
 export class AlunoComponent implements OnInit {
 
-  constructor() { }
+  alunos: any = [];
+  
+  constructor(private service: AlunoServiceService) { }
 
   ngOnInit() {
-    ListasService
+    this.alunos = this.service.getAluno();
+  }
+
+  onSubmitAluno(dados: NgForm) {
+    this.service.saveAluno(dados)
   }
 }

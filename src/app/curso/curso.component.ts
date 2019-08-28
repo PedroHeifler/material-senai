@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ListasService } from '../listas.service';
+import { NgForm } from '@angular/forms';
+import { CursoService } from './curso.service';
+
 
 
 @Component({
@@ -9,14 +11,15 @@ import { ListasService } from '../listas.service';
 })
 export class CursoComponent implements OnInit {
 
-  cursos: any[] = [];
-  listasService: ListasService
-
-  constructor() { 
-    this.listasService = new ListasService();
+  cursos: any = [];
+  
+  constructor(private service: CursoService) { 
+    this.cursos = service.getCurso();
   }
+  
+  ngOnInit() { }
 
-  ngOnInit() {
-    this.cursos = this.listasService.getCursos();
+  onSubmitCurso(dados: NgForm) {
+    this.service.saveCurso(dados);
   }
 }

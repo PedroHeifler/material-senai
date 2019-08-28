@@ -35,5 +35,10 @@
 
 
 <ul>
-    <li *ngFor="let curso of cursos">{{ curso.nome }} - {{ curso.descricao }} - {{ curso.email }}</li>
+    <li *ngFor="let curso of cursos">
+        <label>Nome: &nbsp;</label>{{ curso.nome }}<br>
+        <label>Descrição: &nbsp;</label>{{ curso.descricao }}<br>
+        <label>E-mail: &nbsp;</label>{{ curso.email }}
+    </li>
 </ul>
+<br>
