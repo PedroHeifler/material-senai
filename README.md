@@ -1,2 +1,1 @@
-###Pedro Henrique Eifler
-###Miguel Zimmermann
+Pedro Henrique Eifler -- Miguel Zimmermann
