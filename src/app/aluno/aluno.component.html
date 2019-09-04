@@ -1,5 +1,7 @@
+<h1>Alunos</h1>
 <br>
 <form #Form="ngForm" (ngSubmit)="onSubmitAluno(Form)" class="form-horizontal">
+
     <div class="form-goup">
         <div class="col-sm-12">
             <label class="control-label" for="nome">Nome</label>
@@ -11,18 +13,11 @@
 
     <div class="form-goup">
         <div class="col-sm-12">
-            <label class="control-label" for="descricao">CPF</label>
+            <label class="control-label" for="email">E-mail</label>
         </div>
         <div class="col-sm-12">
-            <input class="form-control" type="text" name="cpf" id="cpf" placeholder="CPF" required #curso="ngModel" [(ngModel)]="alunos.cpf">
-        </div>
-    </div>
-    <div class="form-goup">
-        <div class="col-sm-12">
-            <label class="control-label" for="email">Curso</label>
-        </div>
-        <div class="col-sm-12">
-            <input class="form-control" type="text" name="cursoAluno" id="cursoAluno" placeholder="Curso do aluno" required #curso="ngModel" [(ngModel)]="alunos.cursoAluno">
+            <input class="form-control" type="email" email name="email" id="email" placeholder="e-mail contato" required #email="ngModel"
+                [(ngModel)]="alunos.email">
         </div>
     </div>
 
@@ -35,8 +30,7 @@
 <ul>
     <li *ngFor="let aluno of alunos">
         <label>Nome: &nbsp;</label>{{ aluno.nome }}<br>
-        <label>CPF: &nbsp;</label>{{ aluno.cpf }} <br>
-        <label>Curso: &nbsp;</label>{{ aluno.cursoAluno }}
+        <label>E-mail: &nbsp;</label>{{ aluno.email }}
     </li>
 </ul>
 <br>

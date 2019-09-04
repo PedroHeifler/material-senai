@@ -14,7 +14,7 @@ export class CursoService {
     this.curso.push(dados.value)
   }
 
-  getCurso() {
-    return this.curso;
+  getCurso(id: string): any {
+    return this.curso.find(curso => curso.id == id);
   }
 }

@@ -7,15 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                    <span class="sr-only">(current)</span>
-                </a>
+                <a class="nav-link" routerLink="/cursos">Cursos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" routerLink="/alunos">Alunos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -25,12 +20,5 @@
 </nav>
 
 <main class="container">
-    <h1>Alunos</h1>
-    <app-aluno></app-aluno>
-
-</main>
-<hr>
-<main class="container">
-    <h1>Curso</h1>
-    <app-curso></app-curso>
+    <router-outlet></router-outlet>
 </main>
