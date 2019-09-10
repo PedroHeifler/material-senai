@@ -6,15 +6,19 @@ import { NgForm } from '@angular/forms';
 })
 export class AlunoServiceService {
 
-  private alunos: String[] = [];
+  alunos: any[] = [];
 
   constructor() { }
 
-  saveAluno(dados: NgForm) {
-    this.alunos.push(dados.value);
+  salvar(aluno: any) {
+    this.alunos.push(aluno);
   }
-  
-  getAluno() {
+
+  getAlunos() {
     return this.alunos;
+  }
+
+  getAluno(id: string): any {
+    return this.alunos.find(aluno => aluno.id == id);
   }
 }

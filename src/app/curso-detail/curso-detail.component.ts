@@ -11,15 +11,17 @@ import { CursoService } from '../curso/curso.service';
 export class CursoDetailComponent implements OnInit {
 
   curso: any = new Object();
+  constructor(private route: ActivatedRoute,
+    private cursoService: CursoService
+  ) {}
 
-  constructor(private route: ActivatedRoute, private cursoService: CursoService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getCurso();
   }
-
+  
   getCurso(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.curso - this.cursoService.getCurso(id);
+    this.curso = this.cursoService.getCurso(id);
   }
 }

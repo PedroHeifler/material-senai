@@ -1,0 +1,8 @@
+<br>
+<h1>Lista de Alunos</h1>
+<br>
+<a *ngFor="let aluno of alunos" routerLink="/alunodetail/{{aluno.id}}">
+  <h4>
+    {{ aluno.nome }}
+  </h4>
+</a>

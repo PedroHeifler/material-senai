@@ -1,12 +1,12 @@
 <h1>Curso</h1>
 <br>
-<form #Form="ngForm" (ngSubmit)="onSubmitCurso(Form)" class="form-horizontal">
+<form #Form="ngForm" (ngSubmit)="onSubmit(Form)" class="form-horizontal">
     <div class="form-goup">
         <div class="col-sm-12">
             <label class="control-label" for="nome">Nome</label>
         </div>
         <div class="col-sm-12">
-            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" required #nome="ngModel" [(ngModel)]="cursos.nome">
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" required #nome="ngModel" [(ngModel)]="curso.nome">
         </div>
     </div>
 
@@ -16,7 +16,7 @@
         </div>
         <div class="col-sm-12">
             <input class="form-control" type="text" name="descricao" id="descricao" placeholder="Descrição" required #descricao="ngModel"
-                [(ngModel)]="cursos.descricao">
+                [(ngModel)]="curso.descricao">
         </div>
     </div>
     
@@ -25,11 +25,3 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </form>
-
-
-<<ul>
-    <li >
-        <a routerLink="/cursodetail/ {{ curso }}"><label>Nome: &nbsp;</label>{{ curso.nome }}<br></a>
-    </li>
-</ul>>
-<br>

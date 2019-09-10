@@ -6,8 +6,11 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { CursoComponent } from './curso/curso.component';
 import { AlunoComponent } from './aluno/aluno.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { CursoDetailComponent } from './curso-detail/curso-detail.component';
+import { AlunoDetailComponent } from './aluno-detail/aluno-detail.component';
+import { ListaAlunoComponent } from './lista-aluno/lista-aluno.component';
+import { ListaCursoComponent } from './lista-curso/lista-curso.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { CursoDetailComponent } from './curso-detail/curso-detail.component';
     DataBindingComponent,
     CursoComponent,
     AlunoComponent,
-    CursoDetailComponent
+    CursoDetailComponent,
+    AlunoDetailComponent,
+    ListaAlunoComponent,
+    ListaCursoComponent
   ],
   imports: [
     BrowserModule,

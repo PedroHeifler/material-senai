@@ -12,19 +12,25 @@ import { CursoService } from './curso.service';
 export class CursoComponent implements OnInit {
 
   curso: any;
-  cursos: any = [];
+  cursos: any[] = [];
 
-  constructor(private service: CursoService) {
-    this.cursos = service.getCurso(this.curso.id);
+  constructor(private service: CursoService) { }
+
+  ngOnInit() {
+    this.curso = new Object();
+    this.cursos = this.service.getCursos();
   }
 
-  ngOnInit() { }
-
-  onSubmitCurso(dados: NgForm) {
-    if (dados.valid) {
-        this.curso.id = Math.random().toString(36).substring(2, 15)
+  onSubmit(formulario: NgForm) {
+    if (formulario.valid) {
+      this.curso.id =  
+      Math.random().toString(36).substring(2, 15)
         + Math.random().toString(36).substring(2, 15);
-      this.service.saveCurso(dados);
+      this.service.salvar(this.curso);
+      this.curso = new Object();
+      this.cursos = this.service.getCursos();
+      console.log(this.curso)
+      console.log(this.cursos)
     }
   }
 }

@@ -9,15 +9,24 @@ import { AlunoServiceService } from './aluno.service';
 })
 export class AlunoComponent implements OnInit {
 
-  alunos: any = [];
-  
+  aluno: any;
+  alunos: any[] = [];
+
   constructor(private service: AlunoServiceService) { }
 
   ngOnInit() {
-    this.alunos = this.service.getAluno();
+    this.aluno = new Object();
+    this.alunos = this.service.getAlunos();
   }
 
-  onSubmitAluno(dados: NgForm) {
-    this.service.saveAluno(dados)
+  onSubmit(formulario: NgForm) {
+    if (formulario.valid) {
+      this.aluno.id =  
+      Math.random().toString(36).substring(2, 15)
+        + Math.random().toString(36).substring(2, 15);
+      this.service.salvar(this.aluno);
+      this.aluno = new Object();
+      this.alunos = this.service.getAlunos();
+    }
   }
 }

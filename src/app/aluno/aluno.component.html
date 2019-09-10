@@ -1,13 +1,14 @@
 <h1>Alunos</h1>
 <br>
-<form #Form="ngForm" (ngSubmit)="onSubmitAluno(Form)" class="form-horizontal">
+<form #Form="ngForm" (ngSubmit)="onSubmit(Form)" class="form-horizontal">
 
     <div class="form-goup">
         <div class="col-sm-12">
             <label class="control-label" for="nome">Nome</label>
         </div>
         <div class="col-sm-12">
-            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" required #nome="ngModel" [(ngModel)]="alunos.nome">
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" required #nome="ngModel"
+                [(ngModel)]="aluno.nome">
         </div>
     </div>
 
@@ -16,8 +17,8 @@
             <label class="control-label" for="email">E-mail</label>
         </div>
         <div class="col-sm-12">
-            <input class="form-control" type="email" email name="email" id="email" placeholder="e-mail contato" required #email="ngModel"
-                [(ngModel)]="alunos.email">
+            <input class="form-control" type="email" email name="email" id="email" placeholder="e-mail contato" required
+                #email="ngModel" [(ngModel)]="aluno.email">
         </div>
     </div>
 
@@ -25,12 +26,3 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </form>
-
-
-<ul>
-    <li *ngFor="let aluno of alunos">
-        <label>Nome: &nbsp;</label>{{ aluno.nome }}<br>
-        <label>E-mail: &nbsp;</label>{{ aluno.email }}
-    </li>
-</ul>
-<br>
